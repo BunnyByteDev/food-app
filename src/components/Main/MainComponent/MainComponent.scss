@@ -1,0 +1,70 @@
+@use "../../../scss/util/" as u;
+
+.main {
+  &__tagLine {
+    h1 {
+      display: none;
+    }
+
+    h2 {
+    }
+  }
+  &__bgImage {
+    display: none;
+  }
+
+  &__search {
+  }
+
+  &__resContainer {
+    margin-inline: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  //desktop styles
+  @include u.breakpoint(medium) {
+    &__bgImage {
+      display: flex;
+
+      img {
+        height: 38rem;
+        width: auto;
+
+        position: absolute;
+        right: 0;
+      }
+    }
+
+    &__tagLine {
+      position: absolute;
+      margin-top: 9rem;
+      margin-left: 7rem;
+
+      h1 {
+        display: block;
+      }
+      h2 {
+        color: var(--subtext-color);
+        font-weight: 600;
+      }
+    }
+
+    &__resContainer {
+      margin-top: u.rem(120);
+    }
+
+    &__search {
+      margin-top: u.rem(320);
+      margin-left: 7rem;
+      margin-bottom: 10rem;
+
+      .main__filterBtn {
+        button {
+          color: red;
+        }
+      }
+    }
+  }
+}

@@ -1,9 +1,12 @@
 :root {
-  --background-color: hsl(0, 0, 100%);
+  --main-color: hsl(0, 0, 100%);
   --text-color: hsl(36, 16%, 6%);
   --subtext-color: hsl(0, 0%, 40%);
+  --subtle-color: hsl(0, 0%, 73%);
   --button-color: hsl(360, 92%, 68%);
+  --button-color-hover: hsl(0, 51%, 55%);
   --select-color: hsl(1, 92%, 91%);
   --tag-color: hsl(146, 64%, 36%);
+  --tag-color-hover: hsl(146, 81%, 24%);
   --star-color: hsl(47, 89%, 56%);
 }

@@ -1,12 +1,16 @@
 @use "../../../scss/util/" as u;
 
 .main {
+  position: relative;
+  overflow: hidden;
+  margin-top: u.rem(80);
   &__tagLine {
     h1 {
       display: none;
     }
 
     h2 {
+      margin-left: u.rem(30);
     }
   }
   &__bgImage {
@@ -14,10 +18,51 @@
   }
 
   &__search {
+    width: 100%;
+    position: absolute;
+    margin-left: u.rem(30);
+
+    &__searchInput {
+      height: u.rem(30);
+      width: u.rem(300);
+      border-radius: 10%;
+      border-color: var(--subtle-color);
+      opacity: 60%;
+    }
+
+    &__searchBtn {
+      height: u.rem(30);
+      width: u.rem(100);
+      border-radius: 10%;
+      border-style: none;
+      color: white;
+      background-color: var(--tag-color);
+      margin-left: u.rem(5);
+
+      &:hover {
+        background-color: var(--tag-color-hover);
+      }
+    }
+    &__filterBtn {
+      button {
+        height: u.rem(30);
+        width: u.rem(180);
+        color: white;
+        background-color: var(--button-color);
+        border-style: none;
+        border-radius: 10%;
+        margin-top: u.rem(5);
+
+        &:hover {
+          background-color: var(--button-color-hover);
+        }
+      }
+    }
   }
 
   &__resContainer {
     margin-inline: 2rem;
+    margin-top: u.rem(120);
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -44,6 +89,7 @@
 
       h1 {
         display: block;
+        color: var(--text-color);
       }
       h2 {
         color: var(--subtext-color);
@@ -52,19 +98,14 @@
     }
 
     &__resContainer {
-      margin-top: u.rem(120);
+      margin-top: u.rem(580);
+      justify-content: center;
     }
 
     &__search {
       margin-top: u.rem(320);
       margin-left: 7rem;
       margin-bottom: 10rem;
-
-      .main__filterBtn {
-        button {
-          color: red;
-        }
-      }
     }
   }
 }

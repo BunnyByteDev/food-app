@@ -1,19 +1,25 @@
 import "./restaurantCard.scss";
 import { CDN_URL } from "../../../utils/constants.";
 import { FaStar } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const RestaurantCard = (props) => {
   const { resData } = props;
-  const { name, cuisines, avgRating, cloudinaryImageId } = resData?.info;
+  const { id, name, cuisines, avgRating, cloudinaryImageId } = resData?.info;
   const { deliveryTime } = resData?.info?.sla;
-  console.log(resData);
+
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate(`/restaurant/${id}`);
+  };
 
   return (
-    <div className="resCard cursor-pointer grow">
+    <div onClick={handleClick} className="resCard cursor-pointer grow">
       <div className="resCard__info">
         <h3>{name}</h3>
         <p>
-          <FaStar /> {avgRating} • {deliveryTime}
+          <FaStar className="resCard__info__star" /> {avgRating} •{" "}
+          {deliveryTime} min
         </p>
         <p>{cuisines.join(" ")}</p>
       </div>

@@ -1,0 +1,14 @@
+@use "../../../scss/util/" as u;
+
+label {
+  background-color: var(--text-color);
+  color: white;
+  font-size: u.rem(14);
+  padding-inline: u.rem(15);
+  padding-block: u.rem(5);
+  position: absolute;
+  z-index: 10;
+  margin-bottom: u.rem(-10);
+  border-radius: 10%;
+  opacity: 90%;
+}

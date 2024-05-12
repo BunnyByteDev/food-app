@@ -1,0 +1,107 @@
+@use "../../../scss/util/" as u;
+
+.itemCard {
+  border-bottom: solid;
+  border-color: var(--subtle-color);
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: u.rem(10);
+
+  &__description {
+    width: 40%;
+    &__name {
+      font-weight: 600;
+      color: var(--subtext-color);
+    }
+    &__description {
+      font-size: u.rem(14);
+    }
+    &__price {
+      margin-bottom: u.rem(1);
+      font-size: u.rem(15);
+      font-weight: 600;
+    }
+
+    &__star {
+      color: var(--star-color);
+    }
+    &__rating {
+      font-size: u.rem(14);
+      font-weight: 600;
+      color: var(--tag-color);
+    }
+    &__ratingCount {
+      color: var(--subtext-color);
+      font-size: small;
+      font-weight: 600;
+    }
+  }
+
+  &__image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+
+    img {
+      width: u.rem(200);
+      height: 85%;
+      border-radius: 20%;
+
+      img:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: inherit;
+        height: inherit;
+        background: #ebebeb
+          url("http://via.placeholder.com/300?text=PlaceHolder") no-repeat
+          center;
+        color: transparent;
+      }
+    }
+
+    &__buttonImg {
+      width: 20%;
+      height: u.rem(28);
+      color: white;
+      background-color: var(--tag-color);
+      border: none;
+      font-weight: 600;
+      border-radius: 20%;
+      position: absolute;
+
+      &:hover {
+        background-color: var(--tag-color-hover);
+      }
+    }
+
+    &__button {
+      width: 50%;
+      height: u.rem(38);
+      color: white;
+      background-color: var(--tag-color);
+      border: none;
+      font-weight: 600;
+      border-radius: 20%;
+      right: 0;
+      margin-right: u.rem(40);
+      margin-top: u.rem(15);
+      &:hover {
+        background-color: var(--tag-color-hover);
+      }
+    }
+  }
+  @include u.breakpoint(large) {
+    &__image {
+      &__buttonImg {
+        width: 6%;
+      }
+      &__button {
+        width: 15%;
+        margin-right: u.rem(100);
+      }
+    }
+  }
+}

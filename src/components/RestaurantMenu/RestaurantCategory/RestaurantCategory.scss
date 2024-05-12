@@ -1,0 +1,21 @@
+@use "../../../scss/util/" as u;
+
+.category {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: hsla(0, 0%, 93%, 0.389);
+  color: var(--subtext-color);
+  padding-block: u.rem(10);
+
+  &__name {
+    font-size: u.rem(17);
+    margin-block: auto;
+  }
+
+  &__arrow {
+    margin-right: u.rem(10);
+    font-size: u.rem(20);
+  }
+}

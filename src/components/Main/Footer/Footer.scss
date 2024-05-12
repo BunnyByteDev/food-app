@@ -1,0 +1,18 @@
+@use "../../../scss/util/" as u;
+.footer {
+  background-color: var(--text-color);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Align content horizontally at the center */
+  align-items: center; /* Align content vertically at the center */
+
+  &__copyright {
+    opacity: 70%;
+    color: var(--select-color);
+    font-size: small;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}

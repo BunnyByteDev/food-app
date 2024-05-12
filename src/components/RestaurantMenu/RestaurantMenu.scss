@@ -1,0 +1,47 @@
+@use "../../scss/util/" as u;
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: u.rem(100);
+  width: 70%;
+  margin-inline: auto;
+
+  &__resDescription {
+    display: flex;
+    justify-content: space-between;
+
+    &__cuisines {
+      font-weight: 600;
+      color: var(--button-color);
+    }
+
+    &__avgRating {
+      font-size: u.rem(14);
+      font-weight: 600;
+      color: var(--tag-color);
+    }
+
+    &__star {
+      color: var(--star-color);
+    }
+
+    &__deliveryTime {
+      font-size: u.rem(14);
+      font-weight: 600;
+    }
+
+    &__clock {
+      color: var(--tag-color);
+    }
+  }
+
+  &__categoryContainer {
+    width: 100%;
+  }
+
+  @include u.breakpoint(large) {
+    width: 45%;
+  }
+}

@@ -1,0 +1,55 @@
+@use "../../scss/util/" as u;
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.shine {
+  background: #f6f7f8;
+  background-image: linear-gradient(
+    to right,
+    #f6f7f8 0%,
+    #edeef1 20%,
+    #f6f7f8 40%,
+    #f6f7f8 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 800px 104px;
+  display: inline-block;
+  position: relative;
+
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: placeholderShimmer;
+  animation-timing-function: linear;
+}
+
+.shimmer {
+  display: flex;
+  flex-direction: column;
+  margin-top: u.rem(15);
+  margin-right: u.rem(15);
+  margin-bottom: u.rem(25);
+
+  .box {
+    width: u.rem(280);
+    height: u.rem(150);
+  }
+
+  .lines {
+    height: u.rem(9);
+    margin-top: u.rem(16); /* Adjust margin-top as needed */
+    width: u.rem(280);
+  }
+}
+
+@keyframes placeholderShimmer {
+  0% {
+    background-position: u.rem(-468) 0;
+  }
+
+  100% {
+    background-position: u.rem(468) 0;
+  }
+}

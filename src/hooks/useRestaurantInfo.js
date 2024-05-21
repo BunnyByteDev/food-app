@@ -11,7 +11,7 @@ const useRestaurantInfo = (resId) => {
   };
   useEffect(() => {
     if (!restaurantInfo) fetchData();
-  }, []);
+  });
 
   return restaurantInfo;
 };

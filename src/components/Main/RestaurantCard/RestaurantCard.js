@@ -23,7 +23,7 @@ const RestaurantCard = (props) => {
         </p>
         <p>{cuisines.join(" ")}</p>
       </div>
-      <img alt={"Restaurant Image"} src={CDN_URL + cloudinaryImageId} />
+      <img alt={"Restaurant"} src={CDN_URL + cloudinaryImageId} />
     </div>
   );
 };

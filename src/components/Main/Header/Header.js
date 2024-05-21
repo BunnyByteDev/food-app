@@ -1,10 +1,12 @@
 import "./header.scss";
 import { FaHamburger, FaCartPlus } from "react-icons/fa";
+import { useSelector } from "react-redux";
 import { useNavigate, useLocation } from "react-router-dom";
 
 const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const cartItems = useSelector((store) => store.cart.items);
 
   const handleHome = () => {
     navigate("/");
@@ -30,7 +32,7 @@ const Header = () => {
         </li>
 
         <li onClick={handleCart} className="cursor-pointer">
-          <FaCartPlus />
+          <FaCartPlus /> ({cartItems.length} items)
         </li>
       </div>
     </div>

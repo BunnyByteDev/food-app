@@ -11,7 +11,7 @@ const useRestaurants = () => {
   };
   useEffect(() => {
     if (!listOfRestaurants) fetchData();
-  }, []);
+  });
 
   return listOfRestaurants;
 };

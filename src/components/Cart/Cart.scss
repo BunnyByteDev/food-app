@@ -1,0 +1,30 @@
+@use "../../scss/util/" as u;
+.cart {
+  display: flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 70%;
+  margin-inline: auto;
+  margin-top: u.rem(120);
+  color: var(--text-color);
+
+  &__btn {
+    margin-inline: 250px;
+    margin-bottom: 30px;
+    background-color: var(--text-color);
+    color: white;
+    padding: 0.12rem;
+    border-radius: 14%;
+  }
+}
+
+.delete_btn {
+  color: black;
+  background-color: white;
+
+  border: none;
+  position: absolute;
+  margin-left: u.rem(340);
+  margin-top: u.rem(50);
+}

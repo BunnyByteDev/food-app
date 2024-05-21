@@ -3,6 +3,8 @@ import Cart from "./Cart/Cart";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Error from "./Error/Error";
 import Menu from "./Main/Menu";
+import { Provider } from "react-redux";
+import appStore from "../utils/redux/reduxStore";
 
 const Body = () => {
   const appRouter = createBrowserRouter([
@@ -19,7 +21,11 @@ const Body = () => {
       errorElement: <Error />,
     },
   ]);
-  return <RouterProvider router={appRouter} />;
+  return (
+    <Provider store={appStore}>
+      <RouterProvider router={appRouter} />
+    </Provider>
+  );
 };
 
 export default Body;

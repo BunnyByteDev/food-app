@@ -1,14 +1,23 @@
+import { useDispatch } from "react-redux";
 import { CDN_URL } from "../../../utils/constants.";
 import "./RestaurantItem.scss";
 import { FaStar } from "react-icons/fa";
+import { addItem } from "../../../utils/redux/cartSlice";
 
-const RestaurantItem = (props) => {
-  //const name = props?.foodItem?.card?.info?.name;
+const RestaurantItem = ({ foodItem }) => {
+  const description = foodItem?.card?.info?.description;
+  const price = foodItem?.card?.info?.price;
+  const imageId = foodItem?.card?.info?.imageId;
+  const name = foodItem?.card?.info?.name;
+  const ratings = foodItem?.card?.info?.ratings;
+  const rating = ratings?.aggregatedRating?.rating;
+  const ratingCountV2 = ratings?.aggregatedRating?.ratingCountV2;
 
-  const { description, price, imageId, name, ratings } =
-    props?.foodItem?.card?.info;
+  const dispatch = useDispatch();
 
-  const { rating, ratingCountV2 } = ratings?.aggregatedRating;
+  const handleAddItem = () => {
+    dispatch(addItem(foodItem));
+  };
 
   return (
     <div className="itemCard">
@@ -17,28 +26,33 @@ const RestaurantItem = (props) => {
         <p className="itemCard__description__description">{description}</p>
         <p className="itemCard__description__price">₹{price}</p>
 
-        {!rating || !ratingCountV2 ? (
-          <div></div>
-        ) : (
+        {rating && ratingCountV2 && (
           <>
             <span>
               <FaStar className="itemCard__description__star" />
             </span>
-            <span className="itemCard__description__rating"> {rating}</span>
-            <span className="itemCard__description__ratingCount">{` (${ratingCountV2})`}</span>
+            <span className="itemCard__description__rating">{rating}</span>
+            <span className="itemCard__description__ratingCount">
+              {" (" + ratingCountV2 + ")"}
+            </span>
           </>
         )}
       </div>
       <div className="itemCard__image">
-        {imageId && <img alt={""} src={CDN_URL + imageId} />}
+        {imageId && <img alt="" src={CDN_URL + imageId} />}
         {imageId && (
-          <button className="itemCard__image__buttonImg cursor-pointer">
-            ADD
+          <button
+            onClick={handleAddItem}
+            className="itemCard__image__buttonImg cursor-pointer"
+          >
+            ADD +
           </button>
         )}
       </div>
       {!imageId && (
-        <button className="itemCard__image__button cursor-pointer">ADD</button>
+        <button className="itemCard__image__button cursor-pointer">
+          ADD +
+        </button>
       )}
     </div>
   );

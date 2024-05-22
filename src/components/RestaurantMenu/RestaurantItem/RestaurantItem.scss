@@ -44,25 +44,16 @@
     overflow: hidden;
 
     img {
+      margin-top: u.rem(100);
+      margin-left: u.rem(10);
       width: u.rem(200);
-      height: 85%;
+      height: 50%;
       border-radius: 20%;
-
-      img:after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: inherit;
-        height: inherit;
-        background: #ebebeb
-          url("http://via.placeholder.com/300?text=PlaceHolder") no-repeat
-          center;
-        color: transparent;
-      }
     }
 
     &__buttonImg {
+      margin-top: u.rem(100);
+      margin-left: u.rem(10);
       width: 20%;
       height: u.rem(28);
       color: white;
@@ -93,9 +84,17 @@
       }
     }
   }
-  @include u.breakpoint(large) {
+  @include u.breakpoint(medium) {
     &__image {
+      img {
+        width: u.rem(200);
+        margin-top: u.rem(10);
+        width: u.rem(200);
+        height: 85%;
+        border-radius: 20%;
+      }
       &__buttonImg {
+        margin-top: u.rem(10);
         width: 6%;
       }
       &__button {

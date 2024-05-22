@@ -10,12 +10,43 @@
   color: var(--text-color);
 
   &__btn {
-    margin-inline: 250px;
-    margin-bottom: 30px;
+    width: u.rem(180);
+    display: block;
+    margin-left: u.rem(100);
+    margin-bottom: u.rem(30);
     background-color: var(--text-color);
     color: white;
     padding: 0.12rem;
     border-radius: 14%;
+  }
+
+  &__empty {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+
+    &__faicon {
+      margin-bottom: u.rem(20);
+      text-align: center;
+      color: var(--subtle-color);
+      font-size: u.rem(180);
+    }
+
+    &__button {
+      width: 30%;
+      height: u.rem(35);
+      color: white;
+      background-color: var(--button-color);
+      border: none;
+      font-weight: 600;
+      border-radius: 20%;
+
+      &:hover {
+        background-color: var(--button-color-hover);
+      }
+    }
   }
 }
 
@@ -24,7 +55,28 @@
   background-color: white;
 
   border: none;
+  display: block;
   position: absolute;
-  margin-left: u.rem(340);
-  margin-top: u.rem(50);
+
+  margin-left: u.rem(190);
+  margin-top: u.rem(450);
+}
+
+@include u.breakpoint(large) {
+  .cart {
+    &__btn {
+      display: block;
+      margin-inline: 250px;
+      margin-bottom: 30px;
+      background-color: var(--text-color);
+      color: white;
+      padding: 0.12rem;
+      border-radius: 14%;
+    }
+  }
+
+  .delete_btn {
+    margin-left: u.rem(550);
+    margin-top: u.rem(100);
+  }
 }

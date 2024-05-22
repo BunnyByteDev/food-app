@@ -32,7 +32,12 @@ const Header = () => {
         </li>
 
         <li onClick={handleCart} className="cursor-pointer">
-          <FaCartPlus /> ({cartItems.length} items)
+          <FaCartPlus
+            className={` cursor-pointer ${
+              location.pathname === "/cart" ? "active" : ""
+            }`}
+          />{" "}
+          ({cartItems.length} items)
         </li>
       </div>
     </div>

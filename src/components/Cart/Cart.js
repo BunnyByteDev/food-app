@@ -4,10 +4,13 @@ import Header from "../Main/Header/Header";
 import "./Cart.scss";
 import { clearCart } from "../../utils/redux/cartSlice";
 import CardItem from "./CartItem";
+import { FaShoppingBasket } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
   const cartItems = useSelector((store) => store.cart.items);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const handleClearCart = () => {
     dispatch(clearCart());
   };
@@ -22,9 +25,15 @@ const Cart = () => {
           </button>
         )}
         {cartItems.length === 0 && (
-          <div>
-            <h2>Cart is empty! Add some items!</h2>
-            <button>Explore</button>
+          <div className="cart__empty">
+            <h2>Your cart is empty, add some items!</h2>
+            <FaShoppingBasket className="cart__empty__faicon" />
+            <button
+              onClick={() => navigate("/")}
+              className="cart__empty__button"
+            >
+              Explore
+            </button>
           </div>
         )}
         <div className="cart__items" data-testid="cart-nav-item">
